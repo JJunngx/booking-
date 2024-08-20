@@ -1,0 +1,11 @@
+.styledImg {
+  width: 200px;
+  height: 150px;
+  /* làm cho kích thức của 5 hình ảnh bằng nhau typehotel */
+}
+
+.styledImgList {
+  width: auto;
+  height: 300px;
+  /* làm cho kích thức của 5 hình ảnh bằng nhau typehotel */
+}

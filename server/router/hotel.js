@@ -1,0 +1,11 @@
+const express = require("express");
+const router = express.Router();
+const cityController = require("../controller/hotel");
+router.get("/hotel", cityController.city);
+router.post("/hotel/search", cityController.hotelSearch);
+router.post("/hotel/search/:id", cityController.hotelDetail);
+router.post("/room", cityController.room);
+router.post("/transaction", cityController.transaction);
+router.post("/showroom", cityController.showRoom);
+router.post("/getTransaction", cityController.getTransaction);
+module.exports = router;

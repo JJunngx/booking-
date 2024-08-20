@@ -1,0 +1,17 @@
+.input {
+  border: none;
+  display: block;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #000;
+  width: 100%;
+}
+.input:focus {
+  outline: none;
+}
+.button {
+  margin-top: 40px;
+  width: 15%;
+  border: 0;
+  background-color: #2b8a3e;
+  color: #fff;
+}

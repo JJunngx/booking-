@@ -1,0 +1,12 @@
+table,
+tr {
+  border: 1px solid #ced4da !important;
+  border-collapse: collapse;
+  /* padding: 20px !important; */
+}
+td {
+  padding: 10px;
+}
+th {
+  padding: 10px;
+}

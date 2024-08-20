@@ -1,0 +1,18 @@
+const express = require("express");
+const router = express.Router();
+const adminController = require("../controller/admin");
+router.post("/newHotel", adminController.newHotel);
+router.get("/hotelsList", adminController.hotelsList);
+router.post("/deleteHotel", adminController.deleteHotel);
+router.get("/roomsList", adminController.roomsList);
+router.post("/deleteRoom", adminController.deleteRoom);
+router.get("/nameHotel", adminController.getNameHotel);
+router.post("/newRoom", adminController.newRoom);
+router.post("/login", adminController.login);
+router.get("/getEditHotel/:_id", adminController.getEditHotel);
+router.put("/editHotel", adminController.editHotel);
+router.get("/getEditRoom/:_id", adminController.getEditRoom);
+router.put("/editRoom", adminController.editRoom);
+router.post("/roomName", adminController.roomName);
+router.post("/getTransaction", adminController.getTransaction);
+module.exports = router;

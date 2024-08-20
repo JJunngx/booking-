@@ -1,0 +1,17 @@
+.option {
+  position: absolute;
+  top: 40px;
+  left: 850px;
+  z-index: 1;
+  background-color: #f8f9fa;
+  padding: 20px;
+  width: 250px;
+}
+.disabledButton {
+  border: 1px solid blue;
+  background-color: white;
+  width: 30px;
+}
+.disabledButton:disabled {
+  cursor: not-allowed;
+}

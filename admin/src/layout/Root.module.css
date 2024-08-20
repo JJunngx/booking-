@@ -1,0 +1,26 @@
+.grid {
+  width: 20px;
+  color: #7048e8;
+}
+.head {
+  color: #7048e8;
+}
+.icon {
+  color: #7048e8;
+}
+.list a {
+  text-decoration: none;
+  color: #000;
+}
+.list a:hover,
+.list a.active {
+  background-color: #b197fc;
+  color: #fff;
+}
+.adminPage {
+  width: 90%;
+  margin: auto;
+}
+.border {
+  height: 90vh;
+}
