@@ -17,7 +17,7 @@ phần client:
 ## DEMO link
 
 client :https://booking-client-eadx.onrender.com/
-admin:https://booking-admin-7rg4.onrender.com/login
+admin:https://booking-admin-7rg4.onrender.com
 
 ## DEployment guide (on local)
 
