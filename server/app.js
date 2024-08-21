@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 mongoose.connect(
-  "mongodb+srv://vocuctt102:dung@assignment-2njs.kxnolld.mongodb.net/assignment2-njs?retryWrites=true&w=majority"
+  "mongodb+srv://vocuctt102:dung@assignment-2njs.kxnolld.mongodb.net/assigment2-njs?retryWrites=true&w=majority"
 );
 
 const accountRouter = require("./router/account");
