@@ -12,15 +12,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { format } from "date-fns";
 import { getFromStorage } from "../context/AuthContext";
+import url_http from "../usehttp";
+
 const Dashboard = () => {
   const [transactions, setTransactions] = useState([]);
   const user = getFromStorage("login");
   useEffect(() => {
     (async () => {
-      const res = await axios.post(
-        "http://localhost:5000/admin/getTransaction",
-        { transaction: "latest transactions" }
-      );
+      const res = await axios.post(`${url_http}/admin/getTransaction`, {
+        transaction: "latest transactions",
+      });
       setTransactions(res.data);
     })();
   }, []);

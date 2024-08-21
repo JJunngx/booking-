@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import InputRoom from "./InputRoom";
+import url_http from "../usehttp";
 const EditRoom = () => {
   const inputRef = {
     titleRef: useRef(null),
@@ -19,7 +20,7 @@ const EditRoom = () => {
     (async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/admin/getEditRoom/${id}`,
+          `${url_http}/admin/getEditRoom/${id}`,
 
           { headers: { "content-Type": "application/json" } }
         );
@@ -39,7 +40,7 @@ const EditRoom = () => {
     const numberRoomEntered = inputRef.numberRoomRef.current.value;
     try {
       await axios.put(
-        "http://localhost:5000/admin/editRoom",
+        `${url_http}/admin/editRoom`,
         {
           _id: id,
           titleEntered,

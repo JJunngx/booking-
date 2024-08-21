@@ -2,11 +2,12 @@ import React, { forwardRef, useEffect, useState } from "react";
 
 import axios from "axios";
 import classes from "./InputRoom.module.css";
+import url_http from "../usehttp";
 const InputRoom = forwardRef((props, ref) => {
   const [nameHotel, setNameHotel] = useState([]);
   useEffect(() => {
     (async () => {
-      const res = await axios.get("http://localhost:5000/admin/nameHotel", {
+      const res = await axios.get(`${url_http}/admin/nameHotel`, {
         headers: { "Content-Type": "application/json" },
       });
       setNameHotel(res.data);

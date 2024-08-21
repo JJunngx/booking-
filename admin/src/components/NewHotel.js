@@ -3,6 +3,7 @@ import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 import InputHotel from "./InputHotel";
+import url_http from "../usehttp";
 const NewHotel = () => {
   const inputRef = {
     nameRef: useRef(null),
@@ -46,7 +47,7 @@ const NewHotel = () => {
     console.log(inputRef.roomRef);
     try {
       const res = await axios.post(
-        "http://localhost:5000/admin/newHotel",
+        `${url_http}/admin/newHotel`,
         {
           nameEntered,
           cityEntered,

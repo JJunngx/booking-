@@ -7,12 +7,14 @@ import Form from "../pages/home/form/Form";
 import Footer from "../pages/home/footer/Footer";
 import { format } from "date-fns";
 import { getFromStorage } from "../pages/home/Nav/Storage";
+import { url_http } from "../hook/useHttp";
+
 const Transaction = () => {
   const [transactions, setTransactions] = useState([]);
   const user = getFromStorage("token");
   useEffect(() => {
     (async () => {
-      const res = await axios.post("http://localhost:5000/getTransaction", {
+      const res = await axios.post(`${url_http}/getTransaction`, {
         id: user.userId,
       });
       setTransactions(res.data);

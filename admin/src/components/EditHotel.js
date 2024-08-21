@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import InputHotel from "./InputHotel";
+import url_http from "../usehttp";
 const EditHotel = () => {
   const inputRef = {
     nameRef: useRef(null),
@@ -22,10 +23,9 @@ const EditHotel = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get(
-          `http://localhost:5000/admin/getEditHotel/${id}`,
-          { headers: { "content-Type": "application/json" } }
-        );
+        const res = await axios.get(`${url_http}/admin/getEditHotel/${id}`, {
+          headers: { "content-Type": "application/json" },
+        });
 
         setHotel(res.data);
       } catch (error) {
@@ -76,7 +76,7 @@ const EditHotel = () => {
     });
     try {
       await axios.put(
-        `http://localhost:5000/admin/editHotel`,
+        `${url_http}/admin/editHotel`,
         {
           _id: id,
           nameEntered,

@@ -4,7 +4,7 @@ const useHttp = () => {
   const searchResults = useCallback(async (data, link, getData) => {
     try {
       const search = await axios.post(
-        `http://localhost:5000${link}`,
+        `https://booking-q22t.onrender.com${link}`,
         { data },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -25,3 +25,4 @@ const useHttp = () => {
   };
 };
 export default useHttp;
+export const url_http = "https://booking-q22t.onrender.com";

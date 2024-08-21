@@ -4,12 +4,14 @@ import { CityList, TypeHotel, HotelList } from "./CityList";
 import hanoi from "./Image/Ha Noi.jpg";
 import hcm from "./Image/HCM.jpg";
 import danang from "./Image/Da Nang.jpg";
+import { url_http } from "../../../hook/useHttp";
+
 const City = () => {
   const [hotels, setHotels] = useState([]);
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get("http://localhost:5000/hotel");
+        const res = await axios.get(`${url_http}/hotel`);
 
         setHotels(res.data.hotels);
       } catch (err) {

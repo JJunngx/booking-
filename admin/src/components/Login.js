@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { AuthContext, saveToStorage } from "../context/AuthContext";
+import url_http from "../usehttp";
+
 const Login = () => {
   const {
     register,
@@ -15,7 +17,7 @@ const Login = () => {
     console.log(data);
     try {
       const res = await axios.post(
-        "http://localhost:5000/admin/login",
+        `${url_http}/admin/login`,
         { data },
         {
           headers: { "Content-Type": "application/json" },

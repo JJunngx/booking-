@@ -136,6 +136,8 @@ import classes from "./NewRoom.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import InputRoom from "./InputRoom";
+import url_http from "../usehttp";
+
 const NewRom = () => {
   const inputRef = {
     titleRef: useRef(null),
@@ -155,7 +157,7 @@ const NewRom = () => {
     const numberRoomEntered = inputRef.numberRoomRef.current.value;
     try {
       const res = await axios.post(
-        "http://localhost:5000/admin/newRoom",
+        `${url_http}/admin/newRoom`,
         {
           titleEntered,
           priceEntered,

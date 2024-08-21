@@ -2,6 +2,7 @@ import React, { forwardRef, useState, useEffect } from "react";
 import axios from "axios";
 import classes from "./InputHotel.module.css";
 import { useParams } from "react-router-dom";
+import url_http from "../usehttp";
 const InputHotel = forwardRef((props, ref) => {
   const {
     name,
@@ -23,7 +24,7 @@ const InputHotel = forwardRef((props, ref) => {
   useEffect(() => {
     const roomResult = async () => {
       const res = await axios.post(
-        "http://localhost:5000/admin/roomName",
+        `${url_http}/admin/roomName`,
         {},
         { headers: { "Content-Type": "application/json" } }
       );

@@ -10,6 +10,7 @@ import { getFromStorage } from "../home/Nav/Storage";
 import DetailItem from "./DetailItem";
 import Footer from "../home/footer/Footer";
 import Form from "../home/form/Form";
+import { url_http } from "../../hook/useHttp";
 
 const Detail = () => {
   const [datePicker, setDatePicker] = useState([
@@ -35,7 +36,7 @@ const Detail = () => {
     (async () => {
       try {
         const res = await axios.post(
-          `http://localhost:5000/hotel/search/${id}`,
+          `${url_http}/hotel/search/${id}`,
           { id },
           { headers: { "content-Type": "application/json" } }
         );
@@ -53,7 +54,7 @@ const Detail = () => {
     (async () => {
       try {
         const res = await axios.post(
-          "http://localhost:5000/showroom",
+          `${url_http}/showroom`,
           { datePicker, allRoomNumbers },
           {
             headers: { "Content-Type": "application/json" },
@@ -72,7 +73,7 @@ const Detail = () => {
     const idRoom = detailData.rooms;
     try {
       const res = await axios.post(
-        `http://localhost:5000/room`,
+        `${url_http}/room`,
         { idRoom },
         { headers: { "Content-Type": "application/json" } }
       );
@@ -125,7 +126,7 @@ const Detail = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/transaction",
+        `${url_http}/transaction`,
         {
           nameEntered,
           hotelId: id,

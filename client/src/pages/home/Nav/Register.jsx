@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import axios from "axios";
+
 import { Link, useNavigate } from "react-router-dom";
 import useHttp from "../../../hook/useHttp";
 const Register = () => {
@@ -45,6 +45,7 @@ const Register = () => {
       alert("mat khau vaf xac nhan mat khau khong khop");
       return;
     }
+
     await searchResults(
       {
         email: emailEntered,

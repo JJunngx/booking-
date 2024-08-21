@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import classes from "./Hotels.module.css";
+import url_http from "../usehttp";
 const Hotels = () => {
   const [allHotels, setAllHotels] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
     (async () => {
-      const res = await axios.get("http://localhost:5000/admin/hotelsList");
+      const res = await axios.get(`${url_http}/admin/hotelsList`);
 
       setAllHotels(res.data);
     })();
@@ -16,7 +17,7 @@ const Hotels = () => {
   const deleteHotelHandle = async (id) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/admin/deleteHotel",
+        `${url_http}/admin/deleteHotel`,
         { id },
         {
           headers: { "Content-Type": "application/json" },

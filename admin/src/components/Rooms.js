@@ -4,13 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import classes from "./Rooms.module.css";
+import url_http from "../usehttp";
+
 const Rooms = () => {
   const [roomList, setRoomList] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
   useEffect(() => {
     (async () => {
-      const res = await axios.get("http://localhost:5000/admin/roomsList", {
+      const res = await axios.get(`${url_http}/admin/roomsList`, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -32,7 +34,7 @@ const Rooms = () => {
   const deleteRoomHandle = async (_id) => {
     try {
       await axios.post(
-        "http://localhost:5000/admin/deleteRoom",
+        `${url_http}/admin/deleteRoom`,
         { _id },
         {
           headers: { "Content-Type": "application/json" },
