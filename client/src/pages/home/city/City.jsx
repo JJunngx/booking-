@@ -8,6 +8,7 @@ import { url_http } from "../../../hook/useHttp";
 
 const City = () => {
   const [hotels, setHotels] = useState([]);
+
   useEffect(() => {
     (async () => {
       try {

@@ -14,7 +14,6 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       const res = await axios.post(
         `${url_http}/admin/login`,

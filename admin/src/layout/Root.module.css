@@ -24,3 +24,6 @@
 .border {
   height: 90vh;
 }
+.cursor {
+  cursor: pointer;
+}

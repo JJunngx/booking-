@@ -39,7 +39,6 @@ const Dashboard = () => {
     (total, current) => total + current.price,
     0
   );
-  console.log(transactions);
 
   const numberOfUsers = [
     ...new Set(transactions.map((transaction) => transaction.userId)),

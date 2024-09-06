@@ -130,7 +130,13 @@ const Root = () => {
               </NavLink>
             </li>
             <li>USER</li>
-            <li onClick={() => logout()}>
+            <li
+              onClick={() => {
+                logout();
+                navigate("/login");
+              }}
+              className={classes.cursor}
+            >
               <FontAwesomeIcon
                 icon={faRightFromBracket}
                 className={classes.icon}
